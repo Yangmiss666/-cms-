@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Welcome</title>
+</head>
+<body>
+    <h1 id="title">Welcome</h1>
+    <p id="description">This is a multi-language website.</p>
+    <select id="languageSwitcher">
+        <option value="en">English</option>
+        <option value="zh-cn">中文</option>
+    </select>
+    <script>
+        const translations = {
+            en: {},
+            'zh-cn': {}
+        };
+
+        async function loadTranslations() {
+            const enResponse = await fetch('locales/en.json');
+            translations.en = await enResponse.json();
+            const zhCnResponse = await fetch('locales/zh-cn.json');
+            translations['zh-cn'] = await zhCnResponse.json();
+        }
+
+        function updateContent(language) {
+            document.getElementById('title').textContent = translations[language].title;
+            document.getElementById('description').textContent = translations[language].description;
+        }
+
+        document.getElementById('languageSwitcher').addEventListener('change', (event) => {
+            const selectedLanguage = event.target.value;
+            updateContent(selectedLanguage);
+        });
+
+        loadTranslations().then(() => {
+            const defaultLanguage = 'en';
+            updateContent(defaultLanguage);
+        });
+    </script>
+</body>
+</html>
