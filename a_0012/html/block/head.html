@@ -100,11 +100,11 @@
       <div class="item js-user ewave-user"></div>
       {/if}
       <div class="item lang-switch">
-          <a class="eng" href="javascript:;" title="Trans"><i class="fa fa-sun-o"></i><span>语言</span></a>
-        <a class="eng" href="javascript:translate.changeLanguage('english');" title="English"><i class="fa fa-sun-o"></i><span>English</span></a>
-        <a class="zh" href="javascript:translate.changeLanguage('chinese_simplified');" title="Chinese"><i class="fa fa-moon-o"></i><span>中文</span></a>
-        <a class="zh_t" href="javascript:translate.changeLanguage('chinese_traditional');" title="Chinese_traditional"><i class="fa fa-moon-o"></i><span>繁体</span></a>
-      </div>
+        <a class="eng" href="javascript:;" title="Trans"><i class="fa fa-sun-o"></i><span>{{language}}</span></a>
+        <a class="eng" href="javascript:changeLanguage('en');" title="{{english}}"><i class="fa fa-sun-o"></i><span>{{english}}</span></a>
+        <a class="zh" href="javascript:changeLanguage('zh-cn');" title="{{chinese_simplified}}"><i class="fa fa-moon-o"></i><span>{{chinese_simplified}}</span></a>
+        <a class="zh_t" href="javascript:changeLanguage('zh-tw');" title="{{chinese_traditional}}"><i class="fa fa-moon-o"></i><span>{{chinese_traditional}}</span></a>
+    </div>
       <!--<div class="item skin-switch">-->
       <!--  <a class="light" href="javascript:;" title="切换至亮色模式"><i class="fa fa-sun-o"></i><span>换肤</span></a>-->
       <!--  <a class="dark" href="javascript:;" title="切换至暗色模式"><i class="fa fa-moon-o"></i><span>换肤</span></a>-->

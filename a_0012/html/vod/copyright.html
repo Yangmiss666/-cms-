@@ -1,10 +1,9 @@
-<!-- /*                    模板馆专业苹果cms模板下载  www.iqmbg.com                          */ -->
-<!-- /* 此模板仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。 */ -->
+<!-- /*                    苹果cms模板                      */ -->
 {if $GLOBALS['config']['app']['copyright_status'] eq 2}
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<title>系统提示......</title>
+<title>{{system_tip}}</title>
 {include file="block/include"}
 </head>
 <body>
@@ -12,11 +11,11 @@
 <div class="container mini-container">
   <div class="panel paner-default ewave-jump-msg">
     <div class="panel-header">
-      <h3 class="text-theme text-center">系统提示...</h3>
+      <h3 class="text-theme text-center">{{system_tip}}</h3>
     </div>
     <div class="panel-body">
-      <h4 class="text-center">亲爱的用户：</h4>
-      <p class="text-center">《{$obj['vod_name']}》{$GLOBALS['config']['app']['copyright_notice']|default='因版权问题，本站不提供播放'}</p>
+      <h4 class="text-center">{{dear_user}}</h4>
+      <p class="text-center">《{$obj['vod_name']}》{{copyright_notice}}</p>
       {if !empty($obj.vod_jumpurl)}
       <h5 class="text-center mt-10">页面将于&nbsp;<strong class="text-theme ewave-countdown" data-jump="{$obj.vod_jumpurl}">8</strong>&nbsp;秒后自动&nbsp; <a href="{$obj.vod_jumpurl}"><strong class="text-theme">跳转</strong></a></h5>
       {/if}
